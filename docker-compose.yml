@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  medical-api:
+    container_name: medical-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
