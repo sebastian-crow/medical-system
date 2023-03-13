@@ -1,7 +1,6 @@
 version: '3.8'
 services:
-  medical-api:
-    container_name: medical-api
+  web:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,3 +8,6 @@ services:
       - 3000:3000
     env_file:
       - .env
+    volumes:
+      - .:/app
+ 
