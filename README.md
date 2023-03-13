@@ -35,7 +35,7 @@ $ JWT_REFRESH_SECRET
 $ PORT=port
 ```
 
-## Setting Docker
+## Docker Setup
 
 ```sh
 # Give your docker image a name
