@@ -35,6 +35,19 @@ $ JWT_REFRESH_SECRET
 $ PORT=port
 ```
 
+## Setting Docker
+
+```sh
+# Give your docker image a name
+$ docker build -t <your username>/medical-api .
+
+# for example
+$ docker build -t medical-api .
+
+# After your Docker image is successfully build start it with this command
+$ docker run -p 3000:3000 --env-file .env -d <your username>/nest-api 
+```
+
 ## Features
 
 - ESLint and Prettier are integrated with VSCode to fix and format code on save (you need eslint and prettier VSCode plugins)
