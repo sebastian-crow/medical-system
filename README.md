@@ -8,6 +8,9 @@ A REST API. Using Nextjs, TypeScript, MongoDB, MongoDB Atlas Database, Docker, E
 # Install dependencies
 $ npm i
 
+# if npm i fails, try
+$ npm i --legacy-peer-deps
+
 # development
 $ npm run start
 
@@ -45,7 +48,7 @@ $ docker build -t <your username>/medical-api .
 $ docker build -t medical-api .
 
 # After your Docker image is successfully build start it with this command
-$ docker run -p 3000:3000 --env-file .env -d <your username>/nest-api 
+$ docker run -p 3000:3000 --env-file .env -d <your username>/nest-api
 ```
 
 ## Features
