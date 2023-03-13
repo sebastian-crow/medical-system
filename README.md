@@ -6,7 +6,7 @@ A REST API. Using Nextjs, TypeScript, MongoDB, MongoDB Atlas Database, Docker, E
 
 ```sh
 # Install dependencies
-$ npm i 
+$ npm i
 
 # development
 $ npm run start
@@ -18,6 +18,22 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Setting .env environment
+
+```sh
+# Set MongoDB URI
+$ MONGO_URI=mongodb://[username:password@]host[:port][,...hostN[:port]][/[database][?parameter_list]]
+
+# Set the JWT secret key
+$ JWT_ACCESS_SECRET=secret
+
+# Set the JWT Refresh secret key
+$ JWT_REFRESH_SECRET
+
+# Especify the port
+$ PORT=port
+```
+
 ## Features
 
 - ESLint and Prettier are integrated with VSCode to fix and format code on save (you need eslint and prettier VSCode plugins)
@@ -26,7 +42,6 @@ $ npm run start:prod
 - JWT authentication
 - Role Based System
 - Passport Authentication
-
 
 ## License
 
