@@ -49,6 +49,11 @@ $ docker build -t medical-api .
 
 # After your Docker image is successfully build start it with this command
 $ docker run -p 3000:3000 --env-file .env -d <your username>/nest-api
+
+# With Docker compose
+$ docker-compose up
+
+$ docker-compose up -d
 ```
 
 ## Features
