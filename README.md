@@ -53,6 +53,7 @@ $ docker run -p 3000:3000 --env-file .env -d <your username>/nest-api
 # With Docker compose
 $ docker-compose up
 
+# As a background service
 $ docker-compose up -d
 ```
 
