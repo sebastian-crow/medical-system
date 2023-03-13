@@ -61,8 +61,6 @@ export class AuthController {
   /* 
     All users recovery password
   */
-  @Roles(Role.DOCTOR, Role.HOSPITAL, Role.PATIENT)
-  @UseGuards(AuthGuard(), RolesGuard)
   @Patch('recovery')
   recovery(@Body() data: AuthDto) {
     return this.authService.recovery(data);

@@ -168,6 +168,13 @@ export class AuthService {
     // Check the user
     const user = await this.usersService.findByDocument(data.document);
     if (!user) throw new BadRequestException('User does not exist');
+
+    const passwordMatches = await argon2.verify(user.password, data.password);
+    if (!passwordMatches)
+      throw new BadRequestException(
+        'You must pass the previous password in order to reset the user password',
+      );
+
     const hash = await this.hashData(data.newPassword);
     const newUser = {
       ...data,
