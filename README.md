@@ -21,6 +21,8 @@ $ npm run start:prod
 ## Setting .env environment
 
 ```sh
+# Create an .env file in the root directory of the application
+
 # Set MongoDB URI
 $ MONGO_URI=mongodb://[username:password@]host[:port][,...hostN[:port]][/[database][?parameter_list]]
 
