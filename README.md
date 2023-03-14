@@ -65,6 +65,9 @@ $ docker-compose up -d
 - JWT authentication
 - Role Based System
 - Passport Authentication
+- PDF endpoint report generated with MongoDB data
+- Dockerfile and docker-compose to generate an optimized production container
+- Deployment configuration to deploy to Heroku
 
 ## License
 
