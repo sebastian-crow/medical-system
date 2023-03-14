@@ -57,6 +57,16 @@ $ docker-compose up
 $ docker-compose up -d
 ```
 
+## API documentation
+
+```sh
+# You can find the Postman API documentation here
+$ resources/API/nest-medical.postman_collection.json
+
+# Swagger
+$ http://<host>:<port>/api
+```
+
 ## Features
 
 - ESLint and Prettier are integrated with VSCode to fix and format code on save (you need eslint and prettier VSCode plugins)
@@ -68,6 +78,7 @@ $ docker-compose up -d
 - PDF endpoint report generated with MongoDB data
 - Dockerfile and docker-compose to generate an optimized production container
 - Deployment configuration to deploy to Heroku
+- API documentation
 
 ## License
 
