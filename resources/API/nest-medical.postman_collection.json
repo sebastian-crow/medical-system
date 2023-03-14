@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "9237c7ba-7633-4d2d-9374-26147e2afd11",
+		"name": "nest-medical",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24194161"
+	},
+	"item": [
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "get users registered",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a hospital role user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 1020304050,\r\n    \"phone\": \"1020304050\",\r\n    \"email\": \"hospital@hospital.com\",\r\n    \"emailConfirmation\": \"hospital@hospital.com\",\r\n    \"password\": \"securepassword\",\r\n    \"role\": \"hospital\",\r\n    \"name\": \"Hospital America\",\r\n    \"address\": \"Av 50B # 90 - 43\",\r\n    \"medicalServices\": \"Medical services...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hospital user signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 1020304050,\r\n    \"password\": \"securepassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "get users registered",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a patient role user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 101040352,\r\n    \"phone\": \"3104792387\",\r\n    \"email\": \"jhonthepatient@hotmail.com\",\r\n    \"emailConfirmation\": \"jhonthepatient@hotmail.com\",\r\n    \"password\": \"securepassword123\",\r\n    \"role\": \"patient\",\r\n    \"name\": \"Jhon the patient\",\r\n    \"address\": \"cr 89 - # 03 - 92 \",\r\n    \"birthDate\": \"1987-10-19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patient signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 101040352,\r\n    \"password\": \"securepassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "get users registered",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create one user with medical role per hospital",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGVlMDBjNjEzOGJlNTU2OWFmOTk4OSIsImVtYWlsIjoiaG9zcGl0YWxAaG9zcGl0YWwuY29tIiwiZG9jdW1lbnQiOjEwMjAzMDQwNTAsIm5hbWUiOiJIb3NwaXRhbCBBbWVyaWNhIiwicm9sZSI6Imhvc3BpdGFsIiwiaWF0IjoxNjc4Njk3MjMyLCJleHAiOjE2Nzg2OTcyOTJ9.kKnzvCEE2kL1v-cSb-2OwcsLV_FrH5iiudJkkpl-krI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 1035091029,\r\n    \"phone\": \"3217569012\",\r\n    \"email\": \"doctor@doctor.com\",\r\n    \"emailConfirmation\": \"doctor@doctor.com\",\r\n    \"role\": \"doctor\",\r\n    \"name\": \"Juan the doctor\",\r\n    \"address\": \"cr 89a - #39 - 54 \",\r\n    \"belongsTo\": {\r\n        \"document\": 1020304050,\r\n        \"hospital\": \"Hospital America\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup/doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup",
+								"doctor"
+							]
+						},
+						"description": "1. Log in as HOSPITAL and pass the generated token in the header auth to be able to create doctors.\n2. The password must be empty because this user can set his password at the first login.\n3. There is a field called \"belongsTo\", to which the hospital name and document must be passed to make the relationship between them."
+					},
+					"response": []
+				},
+				{
+					"name": "Doctor Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 1035091029,\r\n    \"password\": \"firstsigninpasswordchanged\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin/doctor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin",
+								"doctor"
+							]
+						},
+						"description": "You can pass any password at login because this user was registered without it but at the first login it will be set"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Observation",
+			"item": [
+				{
+					"name": "Obtain observations based on the current user's role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGVlMzFiNjEzOGJlNTU2OWFmOTk5NiIsImVtYWlsIjoiZG9jdG9yQGRvY3Rvci5jb20iLCJkb2N1bWVudCI6MTAzNTA5MTAyOSwibmFtZSI6Ikp1YW4gdGhlIGRvY3RvciIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE2Nzg2OTg1MDcsImV4cCI6MTY3ODY5ODU2N30.ljQ0Bar9-FaiLUK-q12uTirvZvBUZtqFUydT5IonLg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/observations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"observations"
+							]
+						},
+						"description": "Here any user role can request their observations.\nThe PATIENT can obtain observations of himself.\nThe DOCTOR can obtain observations of himself.\nThe HOSPITAL may obtain observations from its doctors.\n\nThere is a service that validates the user making the request in order to obtain the correct information based on who is requesting the observations."
+					},
+					"response": []
+				},
+				{
+					"name": "Get user observation file",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGUyMjY0Mzg3NWYxMGM2MjcxMzU2NCIsImVtYWlsIjoiZG9jdG9yMkBob3RtYWlsLmNvbSIsImRvY3VtZW50IjoyMjIyMjMsIm5hbWUiOiJkb2N0b3IgTmFtZSIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE2Nzg2OTE4MzEsImV4cCI6MTY3ODY5MTg5MX0.SpQpQ4ZHDpzKulMDaMHKbcqNkIVuubOUWUXjp1-bih4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/observations/download/666",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"observations",
+								"download",
+								"666"
+							]
+						},
+						"description": "You must pass the token to be able to interact with this endpoint, you must also pass the PATIENT's document number as params.\nThis endpoint will respond with a PDF file containing a table of all the PATIENT's observations."
+					},
+					"response": []
+				},
+				{
+					"name": "create observation: Only doctor role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGVlMzFiNjEzOGJlNTU2OWFmOTk5NiIsImVtYWlsIjoiZG9jdG9yQGRvY3Rvci5jb20iLCJkb2N1bWVudCI6MTAzNTA5MTAyOSwibmFtZSI6Ikp1YW4gdGhlIGRvY3RvciIsInJvbGUiOiJkb2N0b3IiLCJpYXQiOjE2Nzg2OTgzOTIsImV4cCI6MTY3ODY5ODQ1Mn0.iwXmfeo-6qaIHEJZAQeWN_rqBw-7LdODc3C-5SyBCUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"medical observation 1\",\r\n    \"description\": \"observation description ...\",\r\n    \"healthStatus\": \"alive\",\r\n    \"medicalSpeciality\": \"Internal Medicine\",\r\n    \"doctor\": {\r\n        \"name\": \"Juan the doctor\",\r\n        \"document\": 1035091029\r\n    },\r\n    \"patient\": {\r\n        \"name\": \"Jhon the patient\",\r\n        \"document\": 101040352\r\n    },\r\n    \"hospital\": {\r\n        \"name\": \"Hospital America\",\r\n        \"document\": 1020304050\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/observations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"observations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recovery",
+			"item": [
+				{
+					"name": "recovery password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MGUxMzI1MWYwNDFlMWU4NTU3ZGNkNiIsImVtYWlsIjoiaG9zcGl0YWxtZWxzb0Bob3RtYWlsLmNvbSIsIm5hbWUiOiJIb3NwaXRhbCBOYW1lIiwicm9sZSI6Imhvc3BpdGFsIiwiaWF0IjoxNjc4NjQ2NDc2LCJleHAiOjE2Nzg2NDY1MzZ9.rmqtrqlPgyMIfdYiZ0WPV3MTbq4Tt-JCiXPtDfXenKA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": 1020304050,\r\n    \"password\": \"securepassword\",\r\n    \"newPassword\": \"newcomplexpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/recovery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"recovery"
+							]
+						},
+						"description": "You must pass the previous password in order to reset the user password."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
