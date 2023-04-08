@@ -1,4 +1,4 @@
-# A Role Based Medical System REST API Next.js with TypeScript and ESLint
+# A Role Based Medical System REST API Nest.js with TypeScript and ESLint
 
 A REST API. Using Nextjs, TypeScript, MongoDB, MongoDB Atlas Database, Docker, ESlint, JWT, Passport Authentication.
 
