@@ -1,6 +1,6 @@
 # A Role Based Medical System REST API Nest.js with TypeScript and ESLint
 
-A REST API. Using Nextjs, TypeScript, MongoDB, MongoDB Atlas Database, Docker, ESlint, JWT, Passport Authentication.
+A REST API. Using Nestjs, TypeScript, MongoDB, MongoDB Atlas Database, Docker, ESlint, JWT, Passport Authentication.
 
 ## Get started
 
